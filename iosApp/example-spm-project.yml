@@ -1,0 +1,16 @@
+name: iosAppXcodeGen
+packages:
+  shared:
+    path: ../shared/swiftpackage
+options:
+  bundleIdPrefix: com.boot.iosApp
+  deploymentTarget:
+    iOS: 14.0
+targets:
+  iosApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: iosApp
+    dependencies:
+      - package: shared

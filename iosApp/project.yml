@@ -1,0 +1,35 @@
+name: iosApp
+options:
+  bundleIdPrefix: com.boot.iosApp
+  deploymentTarget:
+    iOS: 14.0
+  createIntermediateGroups: true
+targets:
+  iosApp:
+    scheme:
+      testTargets:
+        - iosAppTests
+    type: application
+    platform: iOS
+    sources:
+      - path: iosApp
+  iosAppTests:
+    type: bundle.unit-test
+    sources:
+      - path: iosAppTests
+    platform: iOS
+    dependencies:
+      - target: iosApp
+  iosAppUITests:
+    type: bundle.ui-testing
+    sources:
+      - path: iosAppUITests
+    platform: iOS
+    dependencies:
+      - target: iosApp
+
+  featureHome:
+    type: application
+    platform: iOS
+    sources:
+      - path: features/home
