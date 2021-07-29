@@ -1,20 +1,21 @@
 package com.boot.kmm.android
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.boot.kmm.Greeting
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.boot.kmm.Greeting
 
 fun greet(): String {
-    return Greeting().greeting()
+	return Greeting().greeting()
 }
 
 class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val tv: TextView = findViewById(R.id.text_view)
-        tv.text = greet()
-    }
+	
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		setContentView(R.layout.activity_main)
+		
+		val tv: TextView = findViewById(R.id.text_view)
+		tv.text = greet()
+	}
 }
